@@ -1,0 +1,623 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Btctele.com</title>
+  <link href="stylesheets/info.css" media="all" rel="stylesheet" type="text/css">
+  <link href="stylesheets/main.css" media="all" rel="stylesheet" type="text/css">
+  <link href="stylesheets/bootstrap.css" media="all" rel="stylesheet" type="text/css">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link rel="shortcut icon" href="./img/logolittle.png" type="image/png">
+  <link rel="icon" href="./img/logolittle.png" type="image/png">
+  <script src="./coffeescript/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="./coffeescript/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./coffeescript/main.js"></script>
+  <script type="text/javascript">
+    var count=0;
+    var wid=fwid=0;
+    var orders=new Array();
+    var fOrders=new Array();
+    var oId=foId=oCount=0;
+    var foCount=9;
+    var dTime=30;
+
+  // for test
+  fOrders = [{
+    amt: "100",
+    id: "1368",
+    mob: "1356*****81",
+    status: "<font color=blue>√订单完成</font>",
+    type: "河南移动 GSM"
+  },{
+    amt: "100",
+    id: "1367",
+    mob: "1356*****81",
+    status: "<font color=blue>√订单完成</font>",
+    type: "河南移动 GSM"
+  },{
+    amt: "100",
+    id: "1367",
+    mob: "1356*****81",
+    status: "<font color=blue>√订单完成</font>",
+    type: "河南移动 GSM"
+  },{
+    amt: "100",
+    id: "1367",
+    mob: "1356*****81",
+    status: "<font color=blue>√订单完成</font>",
+    type: "河南移动 GSM"
+  },{
+    amt: "100",
+    id: "1367",
+    mob: "1356*****81",
+    status: "<font color=blue>√订单完成</font>",
+    type: "河南移动 GSM"
+  }]
+
+    $(document).ready(function() {
+      $("input.plsInput").focus(function(){
+        $(this).removeClass("plsInput");
+      });
+      setInterval('timer();', 1000);
+      fwid=setInterval('showFOrders();', 1000);
+    });
+    </script>
+</head>
+<body>
+  <div class="content">
+    <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://www.btctele.com/"><img src="./img/logolittle.png" style="width:60px;"></img>比特币充值平台</a>
+      </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-collapse navbar-ex1-collapse collapse" style="height: 1px;">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./index.html">首页</a></li>
+        <li><a href="./info.html">统计</a></li>
+        <li><a href="./review.html">评论</a></li>
+        <li><a href="./help.html">帮助</a></li>
+        <li><a href="http://www.btcbbs.com/forum.php?mod=forumdisplay&fid=79">论坛</a></li>
+        <li><a href="#">English</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+    </div>
+
+    </nav>
+
+    <!-- <ul class="nav nav-pills"> -->
+      <!--   <li class="active"><a href="#">首页</a></li> -->
+          <!--   <li><a href="#">统计</a></li> -->
+          <!--   <li><a href="#">评论</a></li> -->
+          <!--   <li><a href="#">帮助</a></li> -->
+          <!--   <li><a href="#">充值论坛</a></li> -->
+          <!--   <li><a href="#">English/Chinese</a></li> -->
+          <!-- </ul> -->
+    </div>
+    <div class="banner clearfix">
+      <div class="jumbotron">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 logo">
+              <img src='./img/logoduan.png'></img>
+            </div>
+            <div class="col-lg-7"><h1>比特币充值手机话费</h1><h2>Btctele.com支持</h2> <h2>移动、联通、电信</h2><h1><i class="icon-btc"></i>
+                全国直充！</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="data-holder">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">Last price:<span>$126.54987</span></div>
+          <div class="col-lg-2">High:<span>$131.02499</span></div>
+          <div class="col-lg-2">Low:<span>$124.55000</span></div>
+          <div class="col-lg-2">Volume:<span>8012 BTC</span></div>
+          <div class="col-lg-3">Weighted Avg:<span>$127.62770</span></div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <table width="100%" border="0"  align="center" class="commTbl">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="title" style="background-color:#CBDDDD;border-color: #fbeed5;"><h4><i class="icon-shopping-cart"></i>&nbsp;&nbsp;比特币充值话费</h4></td>
+                </tr>
+                <tr align="center">
+                  <th>手 机 号</th>
+                  <td align="left">
+                    <input class="form-control input-sm" type="text" id="phone" value="" size="15" placeholder="*必填">
+                  </td>
+                </tr>
+                <tr align="center">
+                  <th>充值金额</th>
+                  <td align="left">
+                  <select id="money" class="big" onchange="changeMoney(this);">
+                    <option value="5" fees="3">5</option>
+                    <option value="10" fees="3">10</option>
+                    <option value="20" fees="2">20</option>
+                    <option value="30" fees="2">30</option>
+                    <option value="50" fees="1" selected="">50</option>
+                    <option value="100" fees="1">100</option>
+                  </select>元
+                  <span id="orderFees">0.06830601</span>BTC
+                </td>
+                </tr>
+                <tr align="center">
+                  <th>BTC市价</th>
+                  <td align="left">
+                  <input type="text" id="lastPrice" value="792" class="form-control input-sm" readonly="">
+                  <span id="loading" title="实时行情每分钟更新">5</span>
+                  </td>
+                </tr>
+                <tr align="center">
+                  <th>验证码</th>
+                  <td align="left">
+                    <input class="form-control input-sm" type="text" id="code" value="" size="15">
+                    <img src="./img/yanzhengma.jpg"></img>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class='center-text'>
+                    <a onclick="submitOrder();" class="btn btn-primary">充值</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="search">
+<table width="100%" border="0"  align="center" class="commTbl">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="title" style="background-color:#CBDDDD;border-color: #fbeed5;"><h4><i class="icon-search"></i>&nbsp;&nbsp; 订单查询</h4></td>
+                </tr>
+                <tr align="center">
+                  <th>手 机 号</th>
+                  <td align="left">
+                    <input class="form-control input-sm" type="text" id="sPhone" value="" size="15" placeholder="*必填">
+                  </td>
+                </tr>
+
+                <tr align="center">
+                  <th>验证码</th>
+                  <td align="left">
+                    <input class="form-control input-sm" type="text" id="sCode" value="" size="15">
+                    <img src="./img/yanzhengma.jpg">
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="2" class='center-text'>
+                    <button type="button" class="btn btn-primary" onclick="searchOrder();">查询</button>
+                  </td>
+                </tr>
+              </tbody>
+              </table>
+            </div>
+
+          </div>
+          <div class="col-lg-4 shadow-bottom" style="max-height: 513px; overflow: hidden;">
+            <table  class="table table-striped" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td colspan="3" class="title" style="background-color:#CBDDDD;"><h4> <i class="icon-time"></i>&nbsp;&nbsp;最近充值</h4></td>
+                </tr>
+                 <tr>
+                   <td class="num">电话</td>
+                   <td>区域</td>
+                   <td>金额</td>
+                 </tr>
+                <tr style="float:clear;height:5px; display: none" id="fListTop"></tr>
+                  <tr class="data">
+                    <div>
+                      <td class="num">1569*****40</td>
+                      <td>陕西联通 GSM</td>
+                      <td>¥50</td>
+                    </div>
+                  </tr>
+                  <tr class="data">
+                    <div>
+                      <td class="num">1569*****40</td>
+                      <td>陕西联通 GSM</td>
+                      <td>¥50</td>
+                    </div>
+                  </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM/3G</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+
+              </tbody>
+              </table>
+          </div>
+          <div class="col-lg-4">
+            <table class="table table-striped" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td colspan="3" class="title" style="background-color: #CBDDDD;"><h4><i class="icon-sort-by-attributes-alt"></i>&nbsp;&nbsp; 充值排行</h4></td>
+                </tr>
+                 <tr>
+                   <td class="num">电话</td>
+                   <td>区域</td>
+                   <td>金额</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM/3G</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+                 <tr class="data">
+                   <td class="num">1569*****40</td>
+                   <td>陕西联通 GSM</td>
+                   <td>¥50</td>
+                 </tr>
+
+              </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="footer">
+      <div class="container  clearfix">
+        <div class="contact visible-lg">
+          <img src="./img/logolittle.png" class="logolittle" ></img>
+
+        <h3>联系我们</h3>
+      </div>
+      <div class="footer-title">
+        <ul>
+          <li>充值及退款问题请联系</li>
+          <li>在线时间</li>
+          <li>BTC充值QQ交流群</li>
+          <li>Btctele交流论坛</li>
+          <li>Email</li>
+        </ul>
+      </div>
+
+       <div class="footer-title">
+        <ul>
+          <li>:</li>
+          <li>:</li>
+          <li>:</li>
+          <li>:</li>
+          <li>:</li>
+        </ul>
+      </div>
+
+      <div class="footer-title">
+        <ul>
+          <li>
+          客服QQ:
+            <a href="http://wpa.qq.com/msgrd?V=1&Uin=120161849&Exe=QQ&Site=im.qq.com&Menu=YES">
+            <img align="absmiddle" border="0" src="http://wpa.qq.com/pa?p=1:120161849:1" alt="点击这里给我发消息" title="点击这里给我发消息">
+            </a>
+          </li>
+          <li>工作日:9:30-17:30</li>
+          <li>320068830</li>
+          <li><a href>BtcTele充值论坛</a></li>
+          <li>service@btctele.com</li>
+        </ul>
+      </div>
+      </div>
+      <div class="banquan">|版权所有@ 2013 BtcTele.com 所有权利保留|</div>
+    </div>
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="charge" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">查看订单</h4>
+          </div>
+          <div class="modal-body">
+            <table width="100%" border="0" cellpadding="2" cellspacing="1" align="center" class="table table-striped">
+              <tbody>
+              <tr>
+                <td colspan="2" class="title">请支付比特币</td>
+              </tr>
+              <tr align="center">
+                <th width="25%">订单状态</th>
+                <td width="75%" align="left"><span id="payStatus" class="middle"><font color="red">×待付款</font></span></td>
+              </tr>
+              <tr align="center">
+                <th>手机号码</th>
+                <td align="left"><span id="payPhone" class="middle">156 6630 0899</span></td>
+              </tr>
+              <tr align="center">
+                <th style="height:25px;">所在地区</th>
+                <td align="left" style="height:25px;"><span id="payArea">山东 威海 (中国联通 GSM)</span></td>
+              </tr>
+              <tr align="center">
+                <th>充值金额</th>
+                <td align="left"><span id="payMoney" class="middle">50</span>元</td>
+              </tr>
+              <tr align="center">
+                <th style="height:25px;">BTC市价</th>
+                <td align="left" style="height:25px;"><span id="payLastPrice">799.07</span> CNY/BTC (<a href="/help.php#price" target="_blank">?</a>)
+                </td>
+              </tr>
+              <tr align="center">
+                <th>付款地址</th>
+                <td align="left"><input type="text" id="payBtc" value="1AqCouzETEmRxmeLFhbpcd3mQCRw9BigkT" size="25" class="text" title="点击输入框复制BTC地址">
+                  &nbsp;&nbsp;<font color="blue">←</font>点击输入框复制
+                  <br><font color="red">*一个地址只能付款一次*</font> (<a href="/help.php#onlyOne" target="_blank">?</a>)
+                </td>
+              </tr>
+              <tr align="center">
+                <th style="height:50px;">支付比特币</th>
+                <td align="left"><input type="text" id="payBtcamt" value="0.063199" size="12" class="text" title="点击输入框复制BTC金额"> BTC
+                  &nbsp;&nbsp;<font color="blue">←</font>点击输入框复制
+                  <br><font color="red">*请按金额支付,错一位都不行*</font> (<a href="/help.php#moneyerr" target="_blank">?</a>)
+                </td>
+              </tr>
+              <tr align="center">
+                <th>二维码支付<br><br>(<a href="/help.php#qr" target="_blank">如何使用?</a>)</th>
+                <td align="left" id="qrcode" style="height:160px;">
+                  &nbsp;&nbsp;
+                  <img src="./img/2wei.png">
+                </td>
+              </tr>
+              <tr align="center">
+                <td colspan="2" height="30" align="left">
+                  1.因比特币汇率变化快，请务必在1小时内(<span id="payOverTime" class="red">2013-09-02 13:31:35</span>前)按照金额完成付款。付款有问题？请<a href="/contact.php" target="_blank">联系客服</a>。<br>
+                  2.确定付款成功以后(<a href="/help.php#payok" target="_blank">?</a>)，请点[刷新]按钮刷新此页面。
+                </td>
+              </tr>
+            </tbody></table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary">刷新</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="check" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">查看订单</h4>
+          </div>
+          <div class="modal-body">
+
+            <div>
+              手机号：<span id="orderPhone" class="middle">156 6630 0899</span>
+              &nbsp;&nbsp;区域：<span id="orderArea" class="middle">山东 威海(中国联通 GSM)</span>
+            </div>
+            <table width="98%" border="0" cellpadding="2" cellspacing="2" align="center" class="table">
+              <tbody>
+                <tr align="center">
+                </tr>
+                <tr align="center" id="orderTitle">
+                  <th height="20" width="40%">时间</th>
+                  <th width="20%">充值</th>
+                  <th width="20%">状态</th>
+                  <th width="20%">操作</th>
+                </tr>
+                <tr align="center" class="orders">
+                  <td height="20">2013-09-13 01:41</td>
+                  <td>¥100</td>
+                  <td><font color="red">×待付款</font></td>
+                  <td><a href="javascript:viewOrder(1);">查看</a></td>
+                </tr>
+                <tr align="center" class="orders">
+                  <td height="20">2013-09-12 21:33</td>
+                  <td>¥50</td>
+                  <td><font color="red">×订单超时,请勿付款</font>(<a href="/help.php#overtime" target="_blank">?</a>)</td>
+                  <td><a href="javascript:viewOrder(2);">查看</a></td>
+                </tr>
+                <tr align="center" class="orders">
+                  <td height="20">2013-09-04 00:27</td>
+                  <td>¥50</td>
+                  <td><font color="red">×订单超时,请勿付款</font>(<a href="/help.php#overtime" target="_blank">?</a>)</td>
+                  <td><a href="javascript:viewOrder(3);">查看</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary">刷新</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="check2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">查看订单</h4>
+          </div>
+          <div class="modal-body">
+
+            <div>
+              手机号：<span id="orderPhone" class="middle">156 6630 0899</span>
+              &nbsp;&nbsp;区域：<span id="orderArea" class="middle">山东 威海(中国联通 GSM)</span>
+            </div>
+
+
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="title">查看订单</td>
+                </tr>
+                <tr align="center">
+                  <th height="20" width="25%">订单时间</th>
+                  <td width="75%" align="left"><span id="viewTime" class="middle">2013-09-12 21:33:33</span></td>
+                </tr>
+                <tr align="center">
+                  <th height="20">订单状态</th>
+                  <td align="left"><span id="viewStatus" class="middle"><font color="red">×订单超时,请勿付款</font>(<a href="/help.php#overtime" target="_blank">?</a>)</span></td>
+                </tr>
+                <tr align="center">
+                  <th height="20" width="30%">手机号码</th>
+                  <td align="left"><span id="viewPhone" class="middle">156 6630 0899</span></td>
+                </tr>
+                <tr align="center">
+                  <th>所在地区</th>
+                  <td align="left"><span id="viewArea" class="middle">山东 威海 (中国联通 GSM)</span></td>
+                </tr>
+                <tr align="center">
+                  <th>充值金额</th>
+                  <td align="left"><span id="viewMoney" class="middle">50</span>元</td>
+                </tr>
+                <tr align="center">
+                  <th height="20" width="35%">BTC市价</th>
+                  <td width="65%" align="left"><span id="viewLastPrice" class="middle">752.68</span> CNY/BTC (<a href="/help.php#price" target="_blank">?</a>)
+                  </td>
+                </tr>
+                <tr align="center">
+                  <th>付款地址</th>
+                  <td align="left"><span id="viewBtc" class="small"><font color="red">×订单超时,请勿付款</font>(<a href="/help.php#overtime" target="_blank">?</a>)</span>
+                  </td>
+                </tr>
+                <tr align="center">
+                  <th>支付比特币</th>
+                  <td align="left"><span id="viewBtcamt" class="middle"><font color="red">×订单超时,请勿付款</font>(<a href="/help.php#overtime" target="_blank">?</a>)</span>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary">刷新</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+  </body>
+</html>

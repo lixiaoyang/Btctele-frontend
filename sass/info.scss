@@ -1,0 +1,64 @@
+@import "compass/reset";
+@import "compass/css3";
+.content{
+  .container{
+
+    .pay{
+      margin-bottom:20px;
+        .layout{
+          @include box-shadow(0px 0px 9px rgba(0, 0, 0, 0.1));
+          .layout-title{
+          margin-top:20px;
+          padding:10px;
+          background-color:#CBDDDD;
+          h4{
+            margin-top: 10px;
+            margin-left: 15px;
+          }
+
+
+        }
+        .guide{
+          img{
+            width:100%;
+          }
+        }
+        .layout-text{
+          margin-bottom: 20px;
+          .answer{
+           margin-left:5px;
+            .tupian{
+              text-align:center;
+                          }
+
+          }
+            .question{
+              margin-bottom:20px;
+            padding:5px;
+            text-align:left;
+            background-color:#B0C7C9;
+          }
+
+
+          .text-title,{
+            padding:5px;
+            text-align:center;
+            background-color:#B0C7C9;
+            margin-bottom: 15px;
+          }
+          .col-lg-2 {
+            width: 13.666667%;
+            text-align:center;
+          }
+          .col-lg-10{
+            .progress{
+
+              background-color:rgba(0,0,0,0.05);
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

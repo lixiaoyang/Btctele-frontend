@@ -1,0 +1,360 @@
+@import "compass/reset";
+@import "compass/css3";
+
+@media (max-width: 784px) {
+  body nav.navbar ul.nav.navbar-nav{
+    margin: 0;
+    width: 100%;
+    color: #686868;
+    background-color: #F1F1EA;
+  }
+}
+
+body{
+  background:#F5F4F2;
+  @include border-radius(3px);
+  .navbar{
+    background-color:#000;
+    border-radius: 0px;
+    border: 1px solid #000;
+  }
+
+  span#loading{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    text-align: center;
+    background: url(../img/loading.gif) no-repeat;
+  }
+
+
+
+  .navbar-nav > .active > a,
+  .navbar-nav > .active > a:hover,
+  .navbar-nav > .active > a:focus {
+    color: gray;
+    background-color: #CBDDDD;
+
+  }
+  .navbar-nav li a:hover{
+    color:white;
+  }
+  .jumbotron {
+    margin-bottom: 0px;
+       border-radius: 0px;
+    @include background-image(linear-gradient(#ffffff, #C3E0EB 30%, #8CA7B9 50%, #253B46));
+  }
+  .logo{
+    img{
+      width: 100%;
+    }
+  }
+
+
+  .data-holder{
+    color:white;
+    margin-bottom: 30px;
+     background-color:#0E181D;
+
+    .container{
+
+      .row{
+        text-align: center;
+        padding: 20px;
+      }
+
+
+
+
+    }
+
+  }
+
+  button.navbar-toggle{
+    // background: #e7e7e7;
+    background: #CBDDDD;
+    border: 1px solid #CBDDDD;
+    &:hover{
+      border: 1px solid #dddddd;
+    }
+  }
+
+  .navbar-toggle{
+    margin-top: 53px;
+  }
+
+  .navbar-header{
+    margin-right: -15px;
+  }
+  .navbar-brand{
+    img{
+      margin-right: 30px;
+    }
+    font-size:27px;
+    vertical-align:80px;
+  }
+  .navbar{
+  margin-bottom: 0px;
+}
+  .navbar-nav{
+    margin-top: 25px;
+    float:right;
+    font-size: 18px;
+  }
+  .main{
+     .form-control{
+        display:inline;
+     }
+     border-bottom:1px solid #E7E5DB;
+
+    @include box-sizing(border-box);
+    width:100%;
+    .col-lg-3{
+      width:30%;
+    }
+    .shadow-bottom{
+      @include box-shadow(0px 0px 9px rgba(0, 0, 0, 0.1));
+      padding: 0;
+    }
+
+    .col-lg-3,.col-lg-4{
+      text-align:center;
+      table{
+        @include box-shadow(0px 0px 9px rgba(0, 0, 0, 0.1));
+
+      }
+      .commTbl{
+        td{
+          height:48px;
+        }
+      }
+      td,th{
+        img{
+          width:80px;
+        }
+
+
+        &.center-text{
+          text-align: center;
+        }
+        height:45px;
+        font-weight:bolder;
+        padding:5px;
+        input#phone{
+          width:161px;
+          height:25px;
+        }
+        input#sPhone{
+          width:150px;
+          height:25px;
+        }
+        input#lastPrice{
+          width:80px;
+          height:25px;
+        }
+        input#code, input#sCode{
+          width:80px;
+          height:25px;
+        }
+        .btn{
+          margin-bottom: 8px;
+          padding: 8px 30px;
+        }
+        .btn-primary {
+          background-color: #BEBFC0;
+          border-color: #CBDDDD;
+        }
+        .btn-primary:hover{
+          background-color: #253B46;
+          border-color: #253B46;
+        }
+
+      }
+      .search{
+        margin-top:15px;
+        td{
+          height:48px;
+        }
+      }
+    }
+    .table{
+      .title{
+        font-size:15px;
+        font-weight:bolder;
+        text-align:left;
+      }
+      td{
+        border-top:0px;
+        padding:12px;
+        text-align:center;
+        font-size:13px;
+        font-weight:normal;
+
+      }
+      .data{
+        .num{
+          width:50px;
+        }
+      }
+    }
+  }
+  .flow{
+    padding-top:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid #E7E5DB;
+    @include box-sizing(border-box);
+    background-color: #CBDDDD;
+    width:100%;
+    .guide{
+      img{
+        width: 100%;
+      }
+
+
+    }
+  }
+  .discription{
+    @include box-shadow(0px 0px 9px rgba(0, 0, 0, 0.1));
+    margin-bottom: 20px;
+    padding-bottom:20px;
+    border-bottom:1px solid #E7E5DB;
+    width:100%;
+    .discription-title{
+      margin-bottom: 20px;
+    }
+    p{
+      line-height: 20px;
+      text-indent: 2em;
+      font-size:15px;
+      color: #686868;
+  }
+  }
+  .news{
+    @include box-shadow(0px 0px 9px rgba(0, 0, 0, 0.1));
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom:20px;
+    border-bottom:1px solid #E7E5DB;
+-top:20px;
+   border-bottom:1px solid #E7E5DB;
+    width:100%;
+    font-size:15px;
+    .news-title{
+      margin-bottom: 20px;
+
+    }
+    .news-list{
+      text-indent: 2em;
+     li{
+        list-style:none;
+        clear: both;
+        line-height:30px;
+        a {
+          color: #686868;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+      .name{
+        float:left;
+      }
+      .author{
+        float:right;
+        margin-right:25px;
+      }
+  }
+  }
+
+  .weibo{
+    @include box-shadow(0px 0px 9px rgba(0, 0, 0, 0.1));
+    margin-bottom: 20px;
+    padding-top:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid #E7E5DB;
+    width:100%;
+    font-size:12px;
+    .weibo-title{
+      margin-bottom: 20px;
+
+    }
+
+    li{
+      height: 75px;
+      width: 190px;
+      list-style:none;
+      float:left;
+      font-size:12px;
+      a {
+          color: #686868;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+
+      .pic{
+        float: left;
+        width: 20%;
+        height: 75px;
+        margin-right: 10px;
+      }
+      .tit{
+        float: left;
+width: 70%;
+height: 25px;
+line-height: 25px;
+font-weight: bold;
+      }
+      .txt{
+        float: left;
+width: 70%;
+height: 50px;
+      }
+    }
+  }
+  .footer{
+    .container{
+      li{
+        list-style:none;
+      }
+   }
+    a {
+      color: #686868;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .banquan{
+      color:gray;
+      text-align: center;
+    }
+
+    .qq{
+        width: 20px;
+      }
+
+    background-color:#000;
+    color:#ddd;
+    width:100%;
+    .footer-title{
+      float:left;
+      margin: 40px 5px;
+    }
+    h1{
+      font-size:90px;
+    }
+    .contact{
+       float:left;
+       margin: 20px 225px;
+      .logolittle{
+        width:100px;
+      }
+    }
+  }
+}
+
